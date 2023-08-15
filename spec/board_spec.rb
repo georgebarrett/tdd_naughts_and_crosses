@@ -57,4 +57,12 @@ describe Board do
     expect(result).to eq true
   end
 
+  it 'returns false is a square is taken' do
+    board = Board.new
+    board.update_state(1, 1, 'X')
+    result = board.is_empty(1, 1)
+
+    expect(result).to eq false
+  end
+
 end
