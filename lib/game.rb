@@ -18,4 +18,8 @@ class Game
     end
   end
 
+  def switch_player
+    @current_player = @current_player == @player_1 ? @player_2 : @player_1
+  end
+
 end
