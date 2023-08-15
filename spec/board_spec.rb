@@ -50,4 +50,11 @@ describe Board do
     expect(result[2]).to eq ['X', 'X', 'X']
   end
 
+  it 'returns true if a square is empty' do
+    board = Board.new
+    result = board.is_empty(1, 1)
+
+    expect(result).to eq true
+  end
+
 end

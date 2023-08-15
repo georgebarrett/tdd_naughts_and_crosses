@@ -16,6 +16,10 @@ class Board
     @board_state[y_element(y)][x_element(x)] = symbol
   end
 
+  def is_empty(x, y)
+    @board_state[y_element(y)][x_element(x)].nil?
+  end
+
   private
 
   def x_element(x)
