@@ -9,4 +9,11 @@ class Game
     @current_player = player_1
   end
 
+  def make_move(x, y)
+    if @board.is_empty(x, y)
+      @board.update_state(x, y, @current_player.symbol)
+      return 'move made'
+    end
+  end
+
 end
