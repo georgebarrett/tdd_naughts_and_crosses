@@ -10,4 +10,14 @@ describe Board do
     expect(result[2]).to eq [nil, nil, nil]
   end
 
+  it 'updates the state of the board with the first move' do
+    board = Board.new
+    board.update_state(1, 1, 'X')
+    result = board.state
+
+    expect(result[0]).to eq [nil, nil, nil]
+    expect(result[1]).to eq [nil, nil, nil]
+    expect(result[2]).to eq ['X', nil, nil]
+  end
+
 end
