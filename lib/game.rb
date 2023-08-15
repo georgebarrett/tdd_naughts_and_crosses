@@ -13,6 +13,8 @@ class Game
     if @board.is_empty(x, y)
       @board.update_state(x, y, @current_player.symbol)
       return 'move made'
+    else
+      'square taken'
     end
   end
 

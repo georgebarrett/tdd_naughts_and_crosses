@@ -22,7 +22,7 @@ describe Game do
     expect(game.current_player).to eq player_1
   end
 
-  it 'makes updates the board after a player has made a move' do
+  it 'updates the board after a player has made a move' do
     player_1 = double('player_1', name: 'George', symbol: 'X')
     player_2 = double('player_2', name: 'Rona', symbol: 'O')
     board = double('board', is_empty: true, update_state: nil)
@@ -31,5 +31,16 @@ describe Game do
     result = game.make_move(2, 2)
     
     expect(result).to eq 'move made'
+  end
+
+  it 'returns false is a player tries to move to a taken square' do
+    player_1 = double('player_1', name: 'George', symbol: 'X')
+    player_2 = double('player_2', name: 'Rona', symbol: 'O')
+    board = double('board', is_empty: false, update_state: nil)
+
+    game = Game.new(player_1, player_2, board)
+    result = game.make_move(2, 2)
+    
+    expect(result).to eq 'square taken'
   end
 end
