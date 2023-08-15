@@ -3,6 +3,10 @@ class Game
   attr_accessor :current_player
 
   def initialize(player_1, player_2, board)
+    @player_1 = player_1
+    @player_2 = player_2
+    @board = board
+    @current_player = player_1
   end
 
 end
