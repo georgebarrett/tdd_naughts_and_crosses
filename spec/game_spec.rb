@@ -90,4 +90,15 @@ describe Game do
 
     expect(result).to eq 'incomplete'
   end
+
+  it 'returns complete when all the squares are filled but no one has won' do
+    player_1 = double('player_1', name: 'Player 1 Name', symbol: 'X')
+    player_2 = double('player_2', name: 'Player 2 Name', symbol: 'O')
+    board = double('board', is_empty: false, update_state: nil, state: [['Y', 'X', 'X'], ['X', 'X', 'Y'], ['Y', 'Y', 'X']])
+
+    game = Game.new(player_1, player_2, board)
+    result = game.status
+      
+    expect(result).to eq 'complete'
+  end
 end
