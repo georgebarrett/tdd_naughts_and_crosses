@@ -68,4 +68,15 @@ describe Game do
 
     expect(result).to eq player_1
   end
+
+  it 'returns incomplete when no moves are made' do
+    player_1 = double('player_1', name: 'George', symbol: 'X')
+    player_2 = double('player_2', name: 'Rona', symbol: 'O')
+    board = double('board', is_empty: false, update_state: nil, state: [[nil, nil, nil], [nil, nil, nil], [nil, nil, nil]])
+
+    game = Game.new(player_1, player_2, board)
+    result = game.status
+
+    expect(result).to eq 'incomplete'
+  end
 end
