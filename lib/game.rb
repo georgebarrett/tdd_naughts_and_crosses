@@ -32,9 +32,13 @@ class Game
   end
 
   def winner
-    case @winner
+    case @winner_symbol
       when nil
         nil
+      when @player_1.symbol
+        @player_1.name
+      # when @player_2.symbol
+      #   @player_2.name
     end     
   end
 

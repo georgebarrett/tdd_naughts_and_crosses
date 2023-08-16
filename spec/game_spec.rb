@@ -234,4 +234,28 @@ describe Game do
     result = game.winner
     expect(result).to eq nil
   end
+
+  it 'returns "Player 1 Name" when "X" claims a whole line' do
+    player_1 = double('player_1', name: 'Player 1 Name', symbol: 'X')
+    player_2 = double('player_2', name: 'Player 2 Name', symbol: 'O')
+    board = double('board', is_empty: false, update_state: nil, state: [[nil, nil, 'X'], [nil, 'X', nil], ['X', nil, nil]])
+
+    game = Game.new(player_1, player_2, board)
+
+    game.status
+    result = game.winner
+    expect(result).to eq 'Player 1 Name'
+  end
+
+  xit 'returns "Player 2 Name" when "O" claims a whole line' do
+    player_1 = double('player_1', name: 'Player 1 Name', symbol: 'X')
+    player_2 = double('player_2', name: 'Player 2 Name', symbol: 'O')
+    board = double('board', is_empty: false, update_state: nil, state: [['O', 'O', 'O'], [nil, 'X', 'X'], ['X', nil, nil]])
+
+    game = Game.new(player_1, player_2, board)
+
+    game.status
+    result = game.winner
+    expect(result).to eq 'Player 2 Name'
+  end
 end
