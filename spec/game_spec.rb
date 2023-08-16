@@ -247,7 +247,7 @@ describe Game do
     expect(result).to eq 'Player 1 Name'
   end
 
-  xit 'returns "Player 2 Name" when "O" claims a whole line' do
+  it 'returns "Player 2 Name" when "O" claims a whole line' do
     player_1 = double('player_1', name: 'Player 1 Name', symbol: 'X')
     player_2 = double('player_2', name: 'Player 2 Name', symbol: 'O')
     board = double('board', is_empty: false, update_state: nil, state: [['O', 'O', 'O'], [nil, 'X', 'X'], ['X', nil, nil]])

@@ -37,8 +37,8 @@ class Game
         nil
       when @player_1.symbol
         @player_1.name
-      # when @player_2.symbol
-      #   @player_2.name
+      when @player_2.symbol
+        @player_2.name
     end     
   end
 
