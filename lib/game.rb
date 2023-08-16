@@ -31,6 +31,13 @@ class Game
     end
   end
 
+  def winner
+    case @winner
+      when nil
+        nil
+    end     
+  end
+
   private
 
   def winning_line?(array)
