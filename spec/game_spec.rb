@@ -156,4 +156,15 @@ describe Game do
     result = game.status
     expect(result).to eq 'complete'
   end
+
+  it 'returns complete when bottom horizontal line is claimed by O' do
+    player_1 = double('player_1', name: 'Player 1 Name', symbol: 'X')
+    player_2 = double('player_2', name: 'Player 2 Name', symbol: 'O')
+    board = double('board', is_empty: false, update_state: nil, state: [[nil, nil, nil], [nil, nil, nil], ['O', 'O', 'O']])
+
+    game = Game.new(player_1, player_2, board)
+
+    result = game.status
+    expect(result).to eq 'complete'
+  end
 end
